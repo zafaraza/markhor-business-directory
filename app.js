@@ -11,8 +11,8 @@ const sample=[
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 let businesses=[...sample],sbClient=null,session=null;
-const configured=window.MARKHOR_CONFIG&&window.MARKHOR_CONFIG.sbClient_URL.startsWith("https://")&&!window.MARKHOR_CONFIG.sbClient_URL.includes("YOUR_")&&window.MARKHOR_CONFIG.sbClient_ANON_KEY&&!window.MARKHOR_CONFIG.sbClient_ANON_KEY.includes("YOUR_");
-if(configured&&window.supabase)sbClient=window.supabase.createClient(window.MARKHOR_CONFIG.sbClient_URL,window.MARKHOR_CONFIG.sbClient_ANON_KEY);
+const configured=window.MARKHOR_CONFIG&&window.MARKHOR_CONFIG.SUPABASE_URL.startsWith("https://")&&!window.MARKHOR_CONFIG.SUPABASE_URL.includes("YOUR_")&&window.MARKHOR_CONFIG.SUPABASE_ANON_KEY&&!window.MARKHOR_CONFIG.SUPABASE_ANON_KEY.includes("YOUR_");
+if(configured&&window.supabase)sbClient=window.supabase.createClient(window.MARKHOR_CONFIG.SUPABASE_URL,window.MARKHOR_CONFIG.SUPABASE_ANON_KEY);
 function populate(select,items,first){select.innerHTML=`<option value="">${first}</option>`+items.map(x=>`<option>${esc(x)}</option>`).join("");}
 populate($("#cityFilter"),CITIES,"All locations");populate($("#categoryFilter"),CATEGORIES.map(x=>x[0]),"All categories");populate($("#formCity"),CITIES,"Select a city");populate($("#formCategory"),CATEGORIES.map(x=>x[0]),"Select a category");
 $("#year").textContent=new Date().getFullYear();

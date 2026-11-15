@@ -2,6 +2,6 @@
 // Find these in Supabase: Project Settings > API.
 // Never put your Supabase service_role key in this file or in a public website.
 window.MARKHOR_CONFIG = {
-  SUPABASE_URL: "YOUR_SUPABASE_PROJECT_URL",
-  SUPABASE_ANON_KEY: "YOUR_SUPABASE_ANON_KEY"
+  SUPABASE_URL: "https://adyxlulnxnfufsuldbcm.supabase.co/rest/v1/",
+  SUPABASE_ANON_KEY: "sb_publishable_4il5L2UWnxW7hJP-eeGaDA_v19baJ6c"
 };

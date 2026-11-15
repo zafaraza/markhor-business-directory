@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover and support local businesses across Halton Region, the GTA and surrounding communities.">
+  <title>Markhor Business Directory | Find Local Businesses</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Markhor Business Directory home">
+      <span class="brand-mark">M</span><span>MARKHOR <small>BUSINESS DIRECTORY</small></span>
+    </a>
+    <nav><a href="#directory">Explore</a><a href="#how-it-works">How it works</a><a href="#submit">Add your business</a></nav>
+    <a class="nav-cta" href="#submit">List your business <span>↗</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <img class="brand-board" src="assets/markhor-business-directory-brand.png" alt="Markhor Business Directory — Discover, Connect, Support Local">
+        <div class="hero-search-wrap">
+          <div class="eyebrow"><span></span> FIND YOUR LOCAL FAVOURITES</div>
+          <h1>Discover local. <em>Support local.</em></h1>
+          <p class="hero-copy">Explore businesses across Halton Region, the GTA and surrounding communities.</p>
+          <form class="search-panel" id="searchForm">
+            <label class="search-field"><span>⌕</span><input id="searchInput" type="search" placeholder="What are you looking for?"></label>
+            <label class="search-field location-field"><span>⌖</span><select id="cityFilter"><option value="">All locations</option></select></label>
+            <label class="search-field category-field"><span>▦</span><select id="categoryFilter"><option value="">All categories</option></select></label>
+            <button class="search-button" type="submit">Search directory <b>→</b></button>
+          </form>
+          <div class="hero-foot"><span>COMMUNITY-POWERED DIRECTORY</span><span>HALTON · GTA · SOUTHERN ONTARIO</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-wrap">
+      <div class="stats">
+        <div><strong id="businessCount">—</strong><span>Local businesses</span></div>
+        <div><strong>9+</strong><span>Communities covered</span></div>
+        <div><strong>100%</strong><span>Community focused</span></div>
+        <div class="stats-note">A better way to discover<br><b>businesses around you.</b></div>
+      </div>
+    </section>
+
+    <section class="section categories-section" id="directory">
+      <div class="section-heading">
+        <div><div class="eyebrow dark"><span></span> EXPLORE THE DIRECTORY</div><h2>What do you need <em>today?</em></h2></div>
+        <p>Browse popular categories or search for a specific business.</p>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <section class="section listings-section">
+      <div class="section-heading listings-heading">
+        <div><div class="eyebrow dark"><span></span> HANDPICKED VISIBILITY</div><h2>Featured <em>businesses</em></h2></div>
+        <span class="section-note">Sponsored and featured community listings</span>
+      </div>
+      <div class="listing-grid" id="featuredGrid"></div>
+    </section>
+
+    <section class="section all-section">
+      <div class="section-heading listings-heading">
+        <div><div class="eyebrow dark"><span></span> FIND YOUR NEXT LOCAL FAVOURITE</div><h2>Browse <em>businesses</em></h2></div>
+        <span class="result-count" id="resultCount"></span>
+      </div>
+      <div class="listing-grid" id="businessGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>No businesses match your search yet. Try another category or location.</div>
+    </section>
+
+    <section class="join-banner" id="how-it-works">
+      <div><div class="eyebrow"><span></span> GROW WITH YOUR COMMUNITY</div><h2>Your business deserves<br>to be <em>discovered.</em></h2><p>Join the Markhor Business Directory and help local customers find the services they need.</p></div>
+      <a class="light-button" href="#submit">Add your business <b>→</b></a>
+      <div class="banner-watermark">M</div>
+    </section>
+
+    <section class="section submit-section" id="submit">
+      <div class="section-heading">
+        <div><div class="eyebrow dark"><span></span> GET LISTED</div><h2>Put your business <em>on the map.</em></h2></div>
+        <p>Submit your details for review. Listings are published after admin approval.</p>
+      </div>
+      <div class="submit-layout">
+        <div class="submit-info"><div class="info-icon">✦</div><h3>Made for local businesses.</h3><p>Whether you run a shop, offer professional services or serve your neighbourhood, this directory helps people discover what you do.</p><ul><li>Reach customers in your area</li><li>Showcase your services and contact details</li><li>Apply for featured or sponsored placement</li></ul></div>
+        <form class="business-form" id="businessForm">
+          <div class="form-title">Business submission <span>FREE TO APPLY</span></div>
+          <div class="form-grid">
+            <label>Business name *<input name="name" required maxlength="100" placeholder="e.g. Markhor Auto Care"></label>
+            <label>Business category *<select name="category" id="formCategory" required></select></label>
+            <label>City *<select name="city" id="formCity" required></select></label>
+            <label>Phone number *<input name="phone" required type="tel" placeholder="905-555-0100"></label>
+            <label>Website<input name="website" type="url" placeholder="https://"></label>
+            <label>Email<input name="email" type="email" placeholder="you@example.com"></label>
+            <label class="full">Business address<input name="address" placeholder="Street address"></label>
+            <label class="full">Short description *<textarea name="description" required rows="3" maxlength="500" placeholder="Tell the community what makes your business special..."></textarea></label>
+            <label class="full check-label"><input type="checkbox" name="sponsorship"> I am interested in featured or sponsored placement.</label>
+          </div>
+          <button class="search-button submit-button" type="submit">Submit for approval <b>→</b></button>
+          <p class="form-message" id="formMessage" role="status"></p>
+          <small class="privacy-note">By submitting, you confirm that you are authorized to share these business details. Submissions are reviewed before publication.</small>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">M</span><span>MARKHOR <small>BUSINESS DIRECTORY</small></span></a><p>Connecting communities with the businesses that make them thrive.</p><div>© <span id="year"></span> Markhor Business Directory</div><a href="#admin" id="adminLink">Admin</a></footer>
+
+  <dialog id="adminDialog" class="admin-dialog">
+    <div class="admin-head"><div><div class="eyebrow dark"><span></span> DIRECTORY MANAGEMENT</div><h2>Admin <em>dashboard</em></h2></div><button id="closeAdmin" class="close-button">✕</button></div>
+    <div id="adminLoginView"><p class="admin-hint">Sign in with your authorized Supabase admin account to review submissions and manage published listings.</p><form id="adminLogin" class="admin-login"><label>Email<input type="email" name="email" required></label><label>Password<input type="password" name="password" required></label><button class="search-button" type="submit">Sign in →</button><p class="form-message" id="adminMessage"></p></form></div>
+    <div id="adminDashboard" hidden><div class="admin-toolbar"><span id="adminStatus"></span><button id="adminLogout" class="outline-button">Sign out</button></div><div id="pendingList"></div><h3 class="admin-subhead">Published listings</h3><div id="publishedList"></div></div>
+  </dialog>
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
